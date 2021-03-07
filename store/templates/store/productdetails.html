@@ -1,0 +1,48 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block content %}
+<br>
+    {% for tut in part_ones %}
+
+        <a href="{{tut.name}}" style="color:#000;"> </a>
+        <div class="card hoverable">
+          <div class="container">
+            <button class="btn btn-outline-info" style="margin-left: -15px;" >
+              <a href="{% url 'store' %}"><strong> <img src="{% static 'store/images/back.ico' %}"> Back to Store</strong></a>
+            </button>
+          </div>
+
+      <div class="row">
+         <div class="col-md-6 col-lg-6">
+          <div class="jumbotron" style="float: left; background: #232829;">
+              <img class="img-fluid" src="{{ tut.name.image.url }}">
+          </div>
+         </div>
+         <div class="col-md-6 col-lg-6">
+          <div class="card-content  container text-center" style="border-radius: 40px;">
+                <p><h4 style="text-decoration: underline;">
+                 <strong>  <img src="{% static 'store/images/forward.ico' %}">Product Specification</strong></h4></p>
+             <p> <strong> Product:</strong> {{ tut.name}}</p>
+             <p> <strong>Brand:</strong>     {{tut.brand}} </p>
+             <p>  <strong> Size: </strong>   {{tut.size}} </p>
+             <h4>Rating</h4>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star"></span>
+             <div>
+              <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-success add-btn update-cart"><strong>Add to Cart</strong>
+               <a href="{% url 'cart' %}">
+            <img  style="margin-left: -2px;" id="cart-icon" src="{% static 'store/images/cart.PNG' %}">
+          </a>
+              </button>
+             </div>
+          </div>
+         </div>
+        </div>
+</div>
+<br>
+    {% endfor %}
+{% endblock content %}

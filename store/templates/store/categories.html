@@ -1,0 +1,31 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+	<div>
+		<h3 style="color:black; text-decoration: underline; font-family:oblique;font-size:25px;"> Sample Products</h3>
+	</div>
+	<div class="row">
+		{% for category in categories %}
+		<div class="col-lg-4 jumbotron">
+			<br>
+            <img class="thumbnail" src="{{ category.imageURL }}">
+			<div class="box-element  category"  style="background:#232829;">
+				<h6 style="color: lavender;"><strong>{{category.name}}</strong></h6>
+				<hr>
+
+				<button data-category="{{category.id}}" data-action="add" class="btn btn-outline-success add-btn update-cart">
+       <a href="{% url 'cart' %}">
+            <img  style="margin-left: -2px;" id="cart-icon" src="{% static 'store/images/add.ico' %}">
+          </a>
+					<strong>Add to Cart</strong>
+
+				</button>
+
+				<a class="btn btn-outline-info" href="{{ category.product_slug }}">View</a>
+				<h4 style="display: inline-block; float: right"><strong>${{category.price|floatformat:2}}</strong></h4>
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+{% endblock content %}

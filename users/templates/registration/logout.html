@@ -1,0 +1,30 @@
+<html>
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<head>
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />  
+    <meta charset="utf-8">
+    <title>Logout|Bold_Ecommerce</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'store/css/login.css'%}">
+<body>
+
+    <div class="loginbox">
+<hr>
+<h2>You Have Been Logged Out</h2>
+   <div class="border-top-3">
+      <small class="text-muted btn btn-outline-info" style="margin-left:300px;">
+        <strong><a href="{% url 'login' %}">Login again</a></strong>
+      </small>
+    </div>
+    <hr>
+        
+    </div>
+
+</body>
+</head>
+
+</html>
+{% endblock %}
