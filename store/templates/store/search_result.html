@@ -14,14 +14,14 @@
 				<hr>
 
 				<button data-product="{{product.id}}" data-action="add" class="btn btn-outline-success add-btn update-cart">
-       <a href="{% url 'cart' %}"> 
+       <a href="{% url 'cart' %}">
             <img  style="margin-left: -2px;" id="cart-icon" src="{% static 'store/images/add.ico' %}">
-          </a>  
+          </a>
 					<strong>Add to Cart</strong>
-        
+
 				</button>
-				
-				<a class="btn btn-outline-info" href="{{ product.product_slug }}">View</a>
+
+				<a class="btn btn-outline-info" href="{% url 'search_details' product.product_slug %}">View</a>
 				<h4 style="display: inline-block; float: right"><strong>${{product.price|floatformat:2}}</strong></h4>
 			</div>
 		</div>

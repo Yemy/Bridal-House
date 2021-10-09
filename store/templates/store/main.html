@@ -6,9 +6,9 @@
     <title>Amore Bridal House</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
         <link rel="stylesheet" type="text/css" href="{% static 'store/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'store/css/main.css'%}">
           <link rel="shortcut icon" type="image/ICO" href="{% static 'store/favicon.ICO' %}">
           <link rel="stylesheet" href="{% static 'store/css/font-awesome.min.css'%}">
+          <link rel="stylesheet" type="text/css" href="{% static 'store/css/main.css'%}">
 
     <script type="text/javascript">
       var user = '{{request.user}}'
@@ -49,7 +49,7 @@
   <body   style="background:gray;">
 <header class="site-header" style="margin-top: 15px;">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-     <a class="navbar-brand mr-1" style="background: transparent;" href="{% url 'store' %}"><img style="width: 200px; height: auto; " src="{% static 'store/logo_black.jpg' %}">  </a>
+     <a class="navbar-brand mr-1" style="background: transparent;" href="{% url 'store' %}"><img style="width: 200px; height: auto; background: transparent;" src="{% static 'store/logo_black.jpg' %}">  </a>
 
   <!-- <a class="navbar-brand" style="font-style:oblique;" href="{% url 'store' %}"> <strong>Amore Bridal House </strong> </a> -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -82,7 +82,7 @@
       {% csrf_token %}
       <div class="search-container">
         <div class="search">
-        <input style="border-radius: 20px;box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0.5, 0.5, 0.5, 0.5);" type="search" name="search" placeholder="search products here">
+        <input class="search" style="border-radius: 20px;box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0.5, 0.5, 0.5, 0.5);" type="search" name="search" placeholder="search products here">
         <button style="margin-left: -15px; border:0; background: transparent;"><img src="{% static 'store/images/search.PNG' %}"></button>
 
     </div>
@@ -142,7 +142,7 @@
         {% endblock content %}
 
  <br><br><br><br><br>
- <div class="footer footer-expand-md footer-dark bg-dark fixed-bottom">
+ <div class="footer footer-expand-md footer-dark bg-dark">
    <div class="container" style="color: white; font-style: italic;">
    {% block footer_branding %}
    {% endblock footer_branding %}

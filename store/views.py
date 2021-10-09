@@ -4,6 +4,7 @@ import json
 import datetime
 from .models import *
 from .utils import cookieCart, cartData, guestOrder
+from django.http import HttpResponse
 
 
 def Store(request):
@@ -116,16 +117,17 @@ def SearchView(request):
         return render(request, 'store/search_result.html', context)
 
 
-
+matching_details = productDetails.objects.all()
 def single_slug(request, single_slug):
     products = [c.product_slug for c in Product.objects.all()]
     if single_slug in products:
+        global matching_details
         matching_details = productDetails.objects.filter(name__product_slug=single_slug)
         # rating = ProductRating.objects.filter(name=matching_details)
 
     return render(request,
-                  "store/productdetails.html",
-                   {"part_ones": matching_details})
+                      "store/productdetails.html",
+                       {"part_ones": matching_details})
 
     return HttpResponse(f"{single_slug} does not correspond to anything")
 

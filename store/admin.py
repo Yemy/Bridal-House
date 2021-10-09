@@ -23,7 +23,9 @@ class ProductAdmin(admin.ModelAdmin):
 	]
 	list_display = ('name', 'price', 'digital', 'product_url')
 	search_fields = ('name', )
+	# prepopulated_fields = {'product_slug': ('name', )}
 	prepopulated_fields = {'product_slug': ('name', )}
+
 	list_filter = ['digital', 'price', ]
 
 

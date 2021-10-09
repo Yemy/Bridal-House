@@ -11,6 +11,11 @@ h6 {
     color: hsl(0, 0%, 30%);
 }
 
+/* .search{
+  background: url('store/images/search.PNG') no-repeat scroll 7px 7px;
+  padding-left:30px;
+} */
+
 .box-element {
     box-shadow: hsl(0, 0%, 80%) 0 0 16px;
     background-color: #fff;

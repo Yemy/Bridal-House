@@ -52,8 +52,8 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=15, decimal_places=2)
     digital = models.BooleanField(default=False, null=True, blank=True)
     image = models.ImageField(upload_to='products' ,null=True, blank=True)
-    product_slug = models.SlugField(max_length=50, default=1, blank=True, null=True) # new
-
+    # product_slug = models.SlugField(max_length=50, default=1, blank=True, null=True) # new
+    product_slug = models.SlugField(max_length=50, null=True, blank=True, help_text="Product Slug is a url for that Specific Product, Please Don't Edit this if you don't have to")
     def __str__(self):
         return self.name
 

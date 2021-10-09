@@ -1,0 +1,144 @@
+{% extends 'main.html' %}
+
+{% block content %}
+	{% if user.admin %}
+		<div class="container-fluid container-fullw bg-white">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="panel panel-green no-radius text-center">
+					<div class="panel-body">
+						<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
+						<h2 class="StepTitle">patients</h2>
+
+						<p class="links cl-effect-1">
+							<a href="edit-profile.php">
+								Total #Patients
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="panel panel-blue no-radius text-center">
+					<div class="panel-body">
+						<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i> </span>
+						<h2 class="StepTitle"> Doctors</h2>
+
+						<p class="links cl-effect-1">
+							<a href="manage-medhistory.php">
+								 Total #Doctors
+							</a>
+						</p>
+					</div></div></div>
+
+					<div class="col-sm-4">
+						<div class="panel panel-blue no-radius text-center">
+							<div class="panel-body">
+								<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i> </span>
+								<h2 class="StepTitle"> Appointments</h2>
+
+								<p class="links cl-effect-1">
+									<a href="manage-medhistory.php">
+										 Total #Appointments
+									</a>
+								</p>
+							</div></div></div>
+				</div></div>
+	{% elif user.doctor %}
+		<div class="container-fluid container-fullw bg-white">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="panel panel-green no-radius text-center">
+					<div class="panel-body">
+						<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
+						<h2 class="StepTitle">Profile</h2>
+
+						<p class="links cl-effect-1">
+							<a href="#patients">
+							Update Profile
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="panel panel-blue no-radius text-center">
+					<div class="panel-body">
+						<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i> </span>
+						<h2 class="StepTitle"> Patients</h2>
+
+						<p class="links cl-effect-1">
+							<a href="manage-medhistory.php">
+								 Total #Patients
+							</a>
+						</p>
+					</div></div></div>
+
+					<div class="col-sm-4">
+						<div class="panel panel-blue no-radius text-center">
+							<div class="panel-body">
+								<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i> </span>
+								<h2 class="StepTitle"> Appointments</h2>
+
+								<p class="links cl-effect-1">
+									<a href="manage-medhistory.php">
+										 Total #Appointments
+									</a>
+								</p>
+							</div></div></div>
+
+				</div></div>
+	{% elif user.patient %}
+		<div class="container-fluid container-fullw bg-white">
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="panel panel-green no-radius text-center">
+					<div class="panel-body">
+						<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
+						<h2 class="StepTitle">My Profile</h2>
+
+						<p class="links cl-effect-1">
+							<a href="edit-profile.php">
+								Update Profile
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<div class="panel panel-blue no-radius text-center">
+					<div class="panel-body">
+						<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-terminal fa-stack-1x fa-inverse"></i> </span>
+						<h2 class="StepTitle">Medical History</h2>
+
+						<p class="links cl-effect-1">
+							<a href="manage-medhistory.php">
+								 Press here
+							</a>
+						</p>
+					</div></div></div>
+				</div></div>
+		{% else %}
+			<div class="container-fluid container-fullw bg-white">
+			<div class="row">
+				<div class="col-sm-4">
+					<div class="panel panel-green no-radius text-center">
+						<div class="panel-body">
+							<span class="fa-stack fa-2x"> <i class="fa fa-square fa-stack-2x text-primary"></i> <i class="fa fa-smile-o fa-stack-1x fa-inverse"></i> </span>
+							<h2 class="StepTitle">My Profile</h2>
+
+							<p class="links cl-effect-1">
+								<a href="edit-profile.php">
+									Update Profile
+								</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div></div>
+	{% endif %}
+
+{% endblock content %}

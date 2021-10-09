@@ -11,6 +11,7 @@ urlpatterns = [
     path('', include('store.urls')),
     path('users/', include('users.urls')),
     path('search/', users_views.SearchView, name='search'),
-	path('about/', users_views.about, name="about"),
+    path('search/<single_slug>', users_views.single_slug, name='search_details'),
+    path('about/', users_views.about, name="about"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

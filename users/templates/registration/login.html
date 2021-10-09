@@ -1,31 +1,22 @@
-<html>
 {% extends 'store/main.html' %}
 {% load static %}
-
+{% load crispy_forms_tags %}
 {% block content %}
-
 <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />  
-    <meta charset="utf-8">
-    <title>Login|Bold_Ecommerce</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'store/css/login.css'%}">
-<body>
-
-    <div class="loginbox">
-    <img src="{% static 'store/images/avatar.png' %}" class="avatar">
-        <h1> <strong> Login </strong> <img src="{% static 'store/images/key.ico' %}"> </h1>
-        <form method="post">
-            {% csrf_token  %}
-            {{  form.as_p   }}  
-            <input type="submit" name="" value="Login">
-            <a href="{% url 'password_reset' %}">Lost your password?</a><br>
-            <a href="{% url 'register' %}">Don't have an account?</a>
-        </form>
-        
-    </div>
-
-</body>
+  <title>Login|Bold_Ecommerce</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'store/css/login.css'%}">
 </head>
-
-</html>
+<body>
+  <div class="loginbox">
+  <img src="{% static 'store/images/avatar.png' %}" class="avatar">
+      <h1> <strong> Login </strong> <img src="{% static 'store/images/key.ico' %}"> </h1>
+      <form method="post">
+          {% csrf_token  %}
+          {{  form.as_p   }}
+          <input type="submit" name="" value="Login">
+          <a href="{% url 'password_reset' %}">Lost your password?</a><br>
+          <a href="{% url 'register' %}">Don't have an account?</a>
+      </form>
+  </div>
+</body>
 {% endblock %}
